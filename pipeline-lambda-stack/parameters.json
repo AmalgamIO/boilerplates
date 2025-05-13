@@ -1,0 +1,104 @@
+[
+  {
+    "ParameterKey": "devopsEmailArnParam",
+    "type": "String",
+    "default": "/notifications/devops-email",
+    "description": "Parameter Arn for the (owner) Devops Email "
+  },
+
+  {
+    "ParameterKey": "lambdaFunctionName",
+    "type": "String",
+    "default": "Vanilla",
+    "description": "Name of the Lambda Function"
+  },
+  {
+    "ParameterKey": "lambdaEnv",
+    "type": "String",
+    "default": "[\"projectBucket\"]",
+    "description": "Variables to pass along to lambda environment"
+  },
+  {
+    "ParameterKey": "projectBucket",
+    "default": "arn:aws:s3:::mi-pipeline-lambda-code",
+    "type": "String",
+    "description": "For pre-existing bucket, enter its full ARN. For **new** buckets, enter the bucket name"
+  },
+  {
+    "ParameterKey": "applicationName",
+    "type": "String",
+    "default": "arn:aws:codedeploy:{{REGION}}:{{ACCOUNT}}:application:Neopolitan",
+    "description": "ARN of existing Application or name of new one"
+  },
+  {
+    "ParameterKey": "handlerConnectionArnParam",
+    "type": "String",
+    "default": "/amalgamio/github/cnxnARN/handler",
+    "description": "ARN of Parameter holding the GitHub connection token"
+  },
+  {
+    "ParameterKey": "handlerRepoURL",
+    "type": "String",
+    "default": "https://github.com/AmalgamIO/lambda_function_1.git",
+    "description": "Lambda function handler repo URL"
+  },
+  {
+    "ParameterKey": "handlerBranch",
+    "type": "String",
+    "default": "main",
+    "description": "Lambda function handler branch name"
+  },
+  {
+    "ParameterKey": "initLambdaHandler",
+    "default": "arn:aws:s3:::mi-pipeline-lambda-code/scaffold/deployment-package.zip",
+    "type": "String",
+    "description": "Enter ARN if not in the bucket named in 'projectBucket'"
+  },
+  {
+    "ParameterKey": "lambdaExecutionRoleArn",
+    "default": "arn:aws:iam::{{ACCOUNT}}:role/MyLambdaBasicExecutionRole",
+    "type": "String",
+    "description": "ARN of the IAM Role for Lambda Execution Role"
+  },
+  {
+    "ParameterKey": "lambdaAliasName",
+    "default": "live",
+    "type": "String",
+    "description": "Lambda function alias"
+  },
+  {
+    "ParameterKey": "buildSpecPath",
+    "default": "buildspec.yml",
+    "type": "String",
+    "description": "Path to `buildspec.yml` file in the repository. default is root"
+  },
+  {
+    "ParameterKey": "buildTimeout",
+    "default": 10,
+    "type": "Number",
+    "description": "Timeout in minutes for CodeBuild"
+  },
+  {
+    "ParameterKey": "memorySize",
+    "default": 128,
+    "type": "Number",
+    "description": "Memory Size for Lambda resource"
+  },
+  {
+    "ParameterKey": "deploymentConfigName",
+    "default": "test",
+    "allowedValues": [
+      "test",
+      "deployConfigAllAtOnce",
+      "canary10Percent5Minutes",
+      "canary10Percent10Minutes",
+      "canary10Percent15Minutes",
+      "canary10Percent30Minutes",
+      "linear10PercentEvery1Minute",
+      "linear10PercentEvery2Minute",
+      "linear10PercentEvery3Minute",
+      "linear10PercentEvery10Minutes"
+    ],
+    "description": "Name of Deployment strategy for Lambda deployments"
+  }
+]

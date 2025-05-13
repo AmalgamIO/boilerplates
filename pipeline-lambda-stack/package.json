@@ -1,0 +1,28 @@
+{
+  "name": "pipeline-lambda-stack",
+  "version": "1.0.0",
+  "scripts": {
+    "deploy": "sh -c 'if [ -z \"$1\" ]; then echo \"Error: -$1- Please provide a lambda function name\"; exit 1; else tmp=$1 && str='PipelineStack' && if [[ \"$tmp\" == *\"$str\" ]]; then tmp=\"${tmp%\"$str\"}\"; fi; export lambdaFunctionName=$tmp && cdk deploy ${lambdaFunctionName}${str}; fi;'",
+    "synth": "sh -c 'if [ -z \"$1\" ]; then echo \"Error: -$1- Please provide a lambda function name\"; exit 1; else tmp=$1 && str='PipelineStack' && if [[ \"$tmp\" == *\"$str\" ]]; then tmp=\"${tmp%\"$str\"}\"; fi; export lambdaFunctionName=$tmp && cdk synth ${lambdaFunctionName}${str}; fi;'",
+    "watch": "tsc -w",
+    "test": "jest",
+    "cdk": "cdk"
+  },
+  "cdk": {
+    "app": "npx ts-node --prefer-ts-exts bin/main.ts"
+  },
+  "devDependencies": {
+    "@types/jest": "^29.5.14",
+    "@types/node": "22.7.9",
+    "aws-cdk": "2.1005.0",
+    "jest": "^29.7.0",
+    "ts-jest": "^29.2.5",
+    "ts-node": "^10.9.2",
+    "typescript": "~5.6.3"
+  },
+  "dependencies": {
+    "aws-cdk-lib": "2.181.1",
+    "constructs": "^10.0.0",
+    "typescript-optional": "^3.0.0-alpha.3"
+  }
+}

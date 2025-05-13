@@ -1,0 +1,21 @@
+*.js
+!jest.config.js
+*.d.ts
+
+## Node install
+node_modules
+
+## Node build
+dist
+build
+
+## IDE
+.idea
+.iml
+
+# OSX
+.DS_Store
+
+# CDK asset staging directory
+.cdk.staging
+cdk.out
