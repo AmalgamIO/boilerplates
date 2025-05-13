@@ -1,0 +1,82 @@
+### OS/Special Files ###
+.DS_Store
+.DS_Store?
+*.swp
+*.swo
+*~
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+*.lnk
+
+### Build/Dependency Artifacts ###
+/target/
+**/target/
+**/build/
+**/out/
+**/dist/
+**/*.d.ts
+**/*.jar
+**/*.war
+**/*.ear
+**/*.class
+**/*.pyc
+**/*.dll
+**/*.so
+**/*.dylib
+**/.gradle/
+**/.mvn/
+**/.npm/
+**/.venv/
+**/.terraform/
+**/.serverless/
+**/.aws-sam/
+
+
+# CDK asset staging directory
+.cdk.staging
+**/cdk.out/
+
+### IDE/Editor ###
+.idea/
+.vscode/
+*.iml
+*.ipr
+*.iws
+*.code-workspace
+*.sublime-*
+*.suo
+
+### Node ###
+node_modules/
+**/node_modules/
+npm-debug.log*
+yarn-error.log
+.yarn-integrity
+.pnp.js
+
+### Logs/Cache ###
+*.log
+*.log*
+logs/
+**/logs/
+.npm
+.cache/
+.parcel-cache
+.nyc_output/
+coverage/
+
+### Environment ###
+.env
+.env*.local
+.env.development.local
+.env.production.local
+.secrets
+.terraform.tfstate*
+terraform.tfstate*
+
+### Negations (Keep these files) ###
+!gradle/wrapper/gradle-wrapper.jar
+!.mvn/wrapper/maven-wrapper.jar
+!assets/

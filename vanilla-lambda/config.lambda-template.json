@@ -1,0 +1,61 @@
+{
+  "FunctionName": "N/A - used internally",
+  "Role": "N/A - configured internally",
+  "Handler": "",
+  "Description": "",
+  "Timeout": 0,
+  "MemorySize": 0,
+  "VpcConfig": {
+    "SubnetIds": [
+      ""
+    ],
+    "SecurityGroupIds": [
+      ""
+    ],
+    "Ipv6AllowedForDualStack": true
+  },
+  "Environment": {
+    "Variables": {
+      "KeyName": ""
+    }
+  },
+  "Runtime": "nodejs",
+  "DeadLetterConfig": {
+    "TargetArn": ""
+  },
+  "KMSKeyArn": "",
+  "TracingConfig": {
+    "Mode": "Active"
+  },
+  "RevisionId": "",
+  "Layers": [
+    ""
+  ],
+  "FileSystemConfigs": [
+    {
+      "Arn": "",
+      "LocalMountPath": ""
+    }
+  ],
+  "ImageConfig": {
+    "EntryPoint": [
+      ""
+    ],
+    "Command": [
+      ""
+    ],
+    "WorkingDirectory": ""
+  },
+  "EphemeralStorage": {
+    "Size": 0
+  },
+  "SnapStart": {
+    "ApplyOn": "PublishedVersions"
+  },
+  "LoggingConfig": {
+    "LogFormat": "JSON",
+    "ApplicationLogLevel": "TRACE",
+    "SystemLogLevel": "DEBUG",
+    "LogGroup": ""
+  }
+}

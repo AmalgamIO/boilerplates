@@ -1,0 +1,42 @@
+{
+  "name": "vanilla-lambda",
+  "type": "module",
+  "version": "1.0.0",
+  "main": "dist/index.js",
+  "author": {
+    "email": "ronald.dennison@amalgamio.com",
+    "name": "archimedon"
+  },
+  "description": "Function for Neopolitan factory",
+  "private": true,
+  "config": {
+    "lambda": {
+      "Handler": "hello.handler",
+      "Description": "Input vanilla bean, sugar and crean. Output: Vaniila Icecream.",
+      "Timeout": 30,
+      "MemorySize": 128,
+      "Runtime": "nodejs20.x"
+    }
+  },
+  "license": "ISC",
+  "scripts": {
+    "build": "tsx esbuild.config.ts",
+    "test": "vitest run --dir src 2>&1",
+    "test:watch": "vitest watch"
+  },
+  "devDependencies": {
+    "@testing-library/jest-dom": "^6.6.3",
+    "@testing-library/react": "^16.3.0",
+    "@types/aws-lambda": "^8.10.149",
+    "@vitest/coverage-v8": "^3.1.3",
+    "@vitest/ui": "^3.1.3",
+    "esbuild": "^0.25.3",
+    "esbuild-plugin-alias": "^0.2.1",
+    "glob": "^11.0.2",
+    "tsx": "^4.19.4",
+    "vitest": "^3.1.2"
+  },
+  "dependencies": {
+    "aws-sdk": "^2.1692.0"
+  }
+}
